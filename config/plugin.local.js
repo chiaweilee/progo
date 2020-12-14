@@ -1,6 +1,6 @@
 module.exports = {
   proxy: {
-    package: "egg-proxy",
-    enable: true
-  }
+    package: 'egg-proxy',
+    enable: true,
+  },
 };
