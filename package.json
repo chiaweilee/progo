@@ -7,6 +7,7 @@
     "_progo": "bin/progo.js"
   },
   "files": [
+    "app.js",
     "app",
     "bin/progo.js",
     "build",
