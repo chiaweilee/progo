@@ -1,6 +1,8 @@
 const Controller = require('egg').Controller;
 const renderToStream = require('ykfe-utils/lib/renderToStream');
 const ssrConfig = require('../../config/config.ssr');
+const path = require('path');
+const debug = require('debug')('progo');
 
 class PageController extends Controller {
   async index() {
@@ -10,10 +12,10 @@ class PageController extends Controller {
       ctx.type = 'text/html';
       ctx.status = 200;
       Object.assign(ctx.app.config, ssrConfig);
-      const stream = await renderToStream(ctx, ctx.app.config);
-      ctx.body = stream;
+      ctx.app.config.baseDir = path.resolve('.');
+      ctx.body = await renderToStream(ctx, ctx.app.config);
     } catch (error) {
-      ctx.logger.error(`Page Controller renderToStream Error`, error);
+      debug(error);
     }
   }
 }
