@@ -16,7 +16,7 @@
     "lib/run.js"
   ],
   "scripts": {
-    "prepublishOnly": "npm run build:client && np --any-branch --no-tests --no-cleanup --no-yarn --no-publish",
+    "prepublishOnly": "npm run build && np --any-branch --no-tests --no-cleanup --no-yarn --no-publish",
     "test": "node bin/progo.js start --port=8000 /undefined/app/",
     "debug": "egg-bin debug",
     "start": "rimraf dist && concurrently \"npm run ssr\" \" npm run csr \"",
