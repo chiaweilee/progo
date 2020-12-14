@@ -7,6 +7,7 @@ module.exports = {
     dir: [resolvePath('../dist'), resolvePath('../app/public')],
   },
   logger: {
-    consoleLevel: 'DEBUG',
+    level: 'NONE',
+    consoleLevel: 'NONE',
   },
 };
