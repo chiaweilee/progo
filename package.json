@@ -3,8 +3,8 @@
   "version": "0.0.1-4",
   "description": "Pro WiFi Control UI for GoPro Hero",
   "bin": {
-    "progo": "bin/progo",
-    "_progo": "bin/progo"
+    "progo": "bin/progo.js",
+    "_progo": "bin/progo.js"
   },
   "files": [
     "app",
