@@ -12,7 +12,7 @@ class PageController extends Controller {
       ctx.type = 'text/html';
       ctx.status = 200;
       Object.assign(ctx.app.config, ssrConfig);
-      ctx.app.config.baseDir = path.resolve('.');
+      ctx.app.config.baseDir = path.join(__dirname, '../../../../');
       ctx.body = await renderToStream(ctx, ctx.app.config);
     } catch (error) {
       debug(error);
