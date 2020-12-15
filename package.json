@@ -16,6 +16,7 @@
     "lib/run.js"
   ],
   "scripts": {
+    "postinstall": "npm install egg",
     "prepublishOnly": "npm run build && np --any-branch --no-tests --no-cleanup --no-yarn --no-publish",
     "test": "node bin/progo.js start --port=8000 /undefined/app/",
     "debug": "egg-bin debug",
