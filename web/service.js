@@ -1,7 +1,21 @@
 const baseUrl = 'http://10.5.5.9/gp/gpControl/';
+const refreshDuration = 200;
 
-const ctl = async cmd => await (await fetch(baseUrl.concat(cmd))).json();
+const ctl = cmd => fetch(baseUrl + cmd);
 
-export default {
-  status: () => ctl('status'),
-}
+const service = {
+  status: cb => {
+    ctl('status')
+      .then(cb)
+      .catch(() => {
+        cb({ status: {} });
+      })
+      .finally(() => {
+        setTimeout(() => {
+          service.status(cb);
+        }, refreshDuration);
+      });
+  },
+};
+
+export default service;

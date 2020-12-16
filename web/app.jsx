@@ -6,9 +6,10 @@ function Page(props) {
   const [settings, setSettings] = useState({});
 
   useEffect(() => {
-    const res = service.status();
-    setStatus(res.status);
-    setSettings(res.settings);
+    service.status(res => {
+      setStatus(res.status);
+      if (res.settings) setSettings(res.settings);
+    });
   }, []);
 
   return `Hello World! ${JSON.stringify(status)} ${JSON.stringify(settings)}`;
