@@ -7,4 +7,5 @@ function Page(props) {
 Page.getInitialProps = ctx => {
   return Promise.resolve({});
 };
+
 export default Page;
