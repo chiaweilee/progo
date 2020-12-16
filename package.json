@@ -16,7 +16,7 @@
     "lib/run.js"
   ],
   "scripts": {
-    "postinstall": "npm install egg react-dom react",
+    "postinstall": "npm install egg egg-scripts react-dom react",
     "prepublishOnly": "npm run build && np --any-branch --no-tests --no-cleanup --no-yarn --no-publish",
     "test": "DEBUG=progo node bin/progo.js",
     "debug": "egg-bin debug",
