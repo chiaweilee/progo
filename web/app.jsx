@@ -2,8 +2,8 @@ import React, { useState, useEffect } from 'react';
 import service from '@/service';
 
 function Page(props) {
-  const [status, setStatus] = useState({});
-  const [settings, setSettings] = useState({});
+  const [status, setStatus] = useState(undefined);
+  const [settings, setSettings] = useState(undefined);
 
   useEffect(() => {
     service.status(res => {
